@@ -169,7 +169,7 @@ public class ServerOneClient extends Thread {
             }
 
             if (clustering.getDepth() > data.getNumberOfExample()) {
-                out.writeObject("Numero di esempi maggiore della profondità del dendrogramma!");
+                out.writeObject("Profondità del dendrogramma maggiore del numero degli esempi!");
             } else {
                 out.writeObject("OK");
                 out.writeObject(clustering.toString(data));

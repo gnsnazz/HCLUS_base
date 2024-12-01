@@ -22,6 +22,7 @@ CREATE TABLE mapdb.exampleTab(
 ); 
 
 /** Inserisce i valori nella tabella **/
+
 INSERT INTO mapdb.exampleTab VALUES(1,2,0); 
 INSERT INTO mapdb.exampleTab VALUES(0,1,-1); 
 INSERT INTO mapdb.exampleTab VALUES(1,3,5); 

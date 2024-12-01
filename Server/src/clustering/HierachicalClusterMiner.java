@@ -51,7 +51,7 @@ public class HierachicalClusterMiner implements Serializable {
 	 */
 	public void mine(Data data, ClusterDistance distance) throws InvalidDepthException, InvalidSizeException, InvalidClustersNumberException {
 		if (getDepth() > data.getNumberOfExample()) {
-			throw new InvalidDepthException("Numero di esempi maggiore della profondità del dendrogramma! \n");
+			throw new InvalidDepthException("Profondità del dendrogramma maggiore del numero degli esempi!\n");
 		}
 
 		ClusterSet level0 = new ClusterSet(data.getNumberOfExample());
