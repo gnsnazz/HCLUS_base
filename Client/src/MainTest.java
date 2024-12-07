@@ -22,7 +22,6 @@ public class MainTest {
 
     /**
      * Costruttore.
-     *
      * @param ip  indirizzo ip del server
      * @param port  porta del server
      *

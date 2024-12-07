@@ -12,7 +12,7 @@ import java.nio.file.FileAlreadyExistsException;
  *
  * @author Nazz
  */
-public class HierachicalClusterMiner implements Serializable {
+public class HierarchicalClusterMiner implements Serializable {
 	/** Dendrogramma */
 	private final Dendrogram dendrogram;
 	/** Percorso della directory di salvataggio e caricamento degli oggetti serializzati */
@@ -20,13 +20,13 @@ public class HierachicalClusterMiner implements Serializable {
 
 
 	/**
-	 * Crea un'istanza di classe HierachicalClusterMiner con profondità depth.
+	 * Crea un'istanza di classe HierarchicalClusterMiner con profondità depth.
 	 *
 	 * @param depth  profondità del dendrogramma
 	 *
 	 * @throws InvalidDepthException se la profondità è minore di 1
 	 */
-	public HierachicalClusterMiner(int depth) throws InvalidDepthException {
+	public HierarchicalClusterMiner(int depth) throws InvalidDepthException {
 		dendrogram = new Dendrogram(depth);
 	}
 
@@ -97,18 +97,18 @@ public class HierachicalClusterMiner implements Serializable {
 	}
 
 	/**
-	 * Carica un'istanza di HierachicalClusterMiner da un file.
+	 * Carica un'istanza di HierarchicalClusterMiner da un file.
 	 *
 	 * @param  fileName nome del file da cui caricare l'istanza
 	 *
-	 * @return l'istanza caricata di HierachicalClusterMiner
+	 * @return l'istanza caricata di HierarchicalClusterMiner
 	 *
 	 * @throws IOException se si verifica un errore di input/output
 	 * @throws ClassNotFoundException se la classe dell'oggetto serializzato non viene trovata
 	 * @throws IllegalArgumentException se il nome del file è nullo o vuoto
 	 * @throws FileNotFoundException se il file non viene trovato
 	 */
-	public static HierachicalClusterMiner loadHierachicalClusterMiner(String fileName) throws IOException, ClassNotFoundException, IllegalArgumentException {
+	public static HierarchicalClusterMiner loadHierarchicalClusterMiner(String fileName) throws IOException, ClassNotFoundException, IllegalArgumentException {
 		if (fileName == null || fileName.trim().isEmpty()) {
 			throw new IllegalArgumentException("Il nome del file non può essere vuoto o nullo");
 		}
@@ -118,7 +118,7 @@ public class HierachicalClusterMiner implements Serializable {
 			throw new FileNotFoundException("File non trovato: " + fileName);
 		}
 		try (ObjectInputStream inStream = new ObjectInputStream(new FileInputStream(filePath))) {
-			HierachicalClusterMiner loadedFile = (HierachicalClusterMiner) inStream.readObject();
+			HierarchicalClusterMiner loadedFile = (HierarchicalClusterMiner) inStream.readObject();
 			inStream.close();
 			return loadedFile;
         } catch (FileNotFoundException e) {
@@ -128,7 +128,7 @@ public class HierachicalClusterMiner implements Serializable {
 	}
 
 	/**
-	 * Salva l'istanza corrente di HierachicalClusterMiner su un file.
+	 * Salva l'istanza corrente di HierarchicalClusterMiner su un file.
 	 *
 	 * @param  fileName nome del file su cui salvare l'istanza
 	 *

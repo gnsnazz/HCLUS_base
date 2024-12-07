@@ -3,7 +3,7 @@ package server;
 import data.Data;
 import data.InvalidSizeException;
 import data.NoDataException;
-import clustering.HierachicalClusterMiner;
+import clustering.HierarchicalClusterMiner;
 import clustering.InvalidClustersNumberException;
 import clustering.InvalidDepthException;
 
@@ -128,7 +128,7 @@ public class ServerOneClient extends Thread {
         int distanceType = (int) in.readObject();
 
         try {
-            HierachicalClusterMiner clustering = new HierachicalClusterMiner(depth);
+            HierarchicalClusterMiner clustering = new HierarchicalClusterMiner(depth);
             ClusterDistance distance = distanceType == 1 ? new SingleLinkDistance() : new AverageLinkDistance();
 
             clustering.mine(data, distance);
@@ -161,7 +161,7 @@ public class ServerOneClient extends Thread {
     private void handleLoadDendrogramFromFile() throws IOException, ClassNotFoundException {
         String fileName = (String) in.readObject();
         try {
-            HierachicalClusterMiner clustering = HierachicalClusterMiner.loadHierachicalClusterMiner(fileName);
+            HierarchicalClusterMiner clustering = HierarchicalClusterMiner.loadHierarchicalClusterMiner(fileName);
 
             if (data == null) {
                 out.writeObject("Dati non caricati.");
