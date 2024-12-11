@@ -82,15 +82,15 @@ public class MainTest {
      * @throws IOException se ci sono errori di I/O
      * @throws ClassNotFoundException se ci sono errori di casting
      */
-    private void loadDedrogramFromFileOnServer() throws IOException, ClassNotFoundException {
+    private void loadDendrogramFromFileOnServer() throws IOException, ClassNotFoundException {
         System.out.println("Inserire il nome dell'archivio (comprensivo di estensione):");
         String fileName = Keyboard.readString();
 
         out.writeObject(2);
         out.writeObject(fileName);
-        String risposta= (String) (in.readObject());
+        String risposta = (String) (in.readObject());
         if(risposta.equals("OK"))
-            System.out.println(in.readObject()); // stampo il dendrogramma che il server mi sta inviando
+            System.out.println(in.readObject()); // stampa il dendrogramma che il server mi sta inviando
         else
             System.out.println(risposta); // stampo il messaggio di errore
     }
@@ -141,7 +141,7 @@ public class MainTest {
             main.loadDataOnServer();
             int scelta = main.menu();
             if (scelta == 1)
-                main.loadDedrogramFromFileOnServer();
+                main.loadDendrogramFromFileOnServer();
             else
                 main.mineDendrogramOnServer();
         } catch (IOException | ClassNotFoundException e) {
