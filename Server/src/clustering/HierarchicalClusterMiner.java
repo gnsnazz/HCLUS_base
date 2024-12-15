@@ -6,6 +6,8 @@ import distance.ClusterDistance;
 
 import java.io.*;
 import java.nio.file.FileAlreadyExistsException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Modella il processo di clustering.
@@ -137,14 +139,17 @@ public class HierarchicalClusterMiner implements Serializable {
 	 * @throws IllegalArgumentException se il nome del file è nullo o vuoto
 	 */
 	public void salva(String fileName) throws FileNotFoundException, IOException, IllegalArgumentException {
-		final String invalidRegex = "[<>:\"|?*]";
+		final String invalidRegex = "[<>:\"|?*\\\\/]";
 		final String validRegex = "^[\\w,\\s-]+\\.(txt|csv|json|xml|dat|bin|ser)$";
 
 		if (fileName == null || fileName.trim().isEmpty()) {
 			throw new IllegalArgumentException("Il nome del file non può essere nullo o vuoto.");
 		}
 
-		if (fileName.matches(invalidRegex)) {
+		Pattern pattern = Pattern.compile(invalidRegex);
+		Matcher matcher = pattern.matcher(fileName);
+
+		if (matcher.find()) {
 			throw new IOException("Il nome del file contiene caratteri non validi.");
 		}
 
