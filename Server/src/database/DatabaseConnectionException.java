@@ -6,8 +6,11 @@ package database;
 public class DatabaseConnectionException extends Exception {
     /**
      * Costruttore parametrizzato.
+     *
+     * @param msg  messaggio da visualizzare
      */
     DatabaseConnectionException(String msg) {
         super(msg);
     }
+
 }

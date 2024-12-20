@@ -8,16 +8,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/** Schema di una tabella */
+/**
+ * Schema di una tabella.
+ */
 public class TableSchema {
-	/** Connessione al database */
+	/** Connessione al database. */
 	private final DbAccess db;
 
-	/** Classe interna che rappresenta un attributo della tabella */
-	public static class Column{
-		/** Nome dell'attributo */
+	/**
+	 * Classe interna che rappresenta un attributo della tabella.
+	 */
+	public static class Column {
+		/** Nome dell'attributo. */
 		private final String name;
-		/** Tipo dell'attributo */
+		/** Tipo dell'attributo. */
 		private final String type;
 		/**
 		 * Costruttore.
@@ -26,8 +30,8 @@ public class TableSchema {
 		 * @param type  tipo dell'attributo
 		 */
 		Column(String name,String type){
-			this.name=name;
-			this.type=type;
+			this.name = name;
+			this.type = type;
 		}
 		/**
 		 * Restituisce il nome dell'attributo.
@@ -70,8 +74,8 @@ public class TableSchema {
 	 * @throws DatabaseConnectionException in caso di errore di connessione al database
 	 */
 	public TableSchema(DbAccess db, String tableName) throws SQLException, DatabaseConnectionException{
-		this.db=db;
-		HashMap<String,String> mapSQL_JAVATypes= new HashMap<>();
+		this.db = db;
+		HashMap<String,String> mapSQL_JAVATypes = new HashMap<>();
 		//http://java.sun.com/j2se/1.3/docs/guide/jdbc/getstart/mapping.html
 		mapSQL_JAVATypes.put("CHAR","string");
 		mapSQL_JAVATypes.put("VARCHAR","string");

@@ -6,11 +6,9 @@ import data.NoDataException;
 import clustering.HierarchicalClusterMiner;
 import clustering.InvalidClustersNumberException;
 import clustering.InvalidDepthException;
-
 import distance.AverageLinkDistance;
 import distance.ClusterDistance;
 import distance.SingleLinkDistance;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -19,25 +17,15 @@ import java.nio.file.FileAlreadyExistsException;
 
 /**
  * Gestisce le connessioni con i client.
- *
- * @author Nazz
  */
 public class ServerOneClient extends Thread {
-    /**
-     * Socket per la comunicazione con il client.
-     */
+    /** Socket per la comunicazione con il client. */
     private Socket clientSocket;
-    /**
-     * Stream di input per la comunicazione con il client.
-     */
+    /** Stream di input per la comunicazione con il client. */
     private ObjectInputStream in;
-    /**
-     * Stream di output per la comunicazione con il client.
-     */
+    /** Stream di output per la comunicazione con il client. */
     private ObjectOutputStream out;
-    /**
-     * Dataset per memorizzare i dati caricati.
-     */
+    /** Dataset per memorizzare i dati caricati. */
     private Data data;
 
     /**
@@ -65,15 +53,15 @@ public class ServerOneClient extends Thread {
 
                 switch (request) {
                     case 0:
-                        // Carica dati dal database
+                        // carica i dati dal database
                         handleLoadData();
                         break;
                     case 1:
-                        // Esegue clustering
+                        // esegue il clustering
                         handleClustering();
                         break;
                     case 2:
-                        // Carica il dendrogram da file
+                        // carica il dendrogram da file
                         handleLoadDendrogramFromFile();
                         break;
                     default:
@@ -130,12 +118,9 @@ public class ServerOneClient extends Thread {
         try {
             HierarchicalClusterMiner clustering = new HierarchicalClusterMiner(depth);
             ClusterDistance distance = distanceType == 1 ? new SingleLinkDistance() : new AverageLinkDistance();
-
             clustering.mine(data, distance);
-
             out.writeObject("OK");
             out.writeObject(clustering.toString(data));
-
             String fileName = (String) in.readObject();
 
             try {

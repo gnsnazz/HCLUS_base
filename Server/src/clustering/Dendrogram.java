@@ -1,17 +1,14 @@
 package clustering;
 
 import data.Data;
-
 import java.io.Serializable;
 
 /**
  * Modella un dendrogramma.
- *
- * @author Nazz
  */
 class Dendrogram implements Serializable {
-    /** Array di ClusterSet */
-    private final ClusterSet[] tree;    //modella il dendrogramma
+    /** Array di ClusterSet che modella il dendrogramma. */
+    private final ClusterSet[] tree;
 
     /**
      * Crea un vettore di dimensione depth con cui inizializza tree.
@@ -28,7 +25,7 @@ class Dendrogram implements Serializable {
     }
 
     /**
-     * Memorizza c nella posizione level di tree.
+     * Memorizza un ClusterSet in una posizione specifica del dendrogramma.
      *
      * @param level  livello del dendrogramma in cui inserire il cluster set
      */
@@ -41,7 +38,7 @@ class Dendrogram implements Serializable {
      *
      * @param level  livello del dendrogramma da restituire
      *
-     * @return il cluster set al livello level di tree
+     * @return il ClusterSet al livello level di tree
      */
     ClusterSet getClusterSet(int level) {
         return tree[level];
@@ -62,11 +59,11 @@ class Dendrogram implements Serializable {
      * @return una stringa che rappresenta il dendrogramma
      */
     public String toString() {
-        StringBuilder v = new StringBuilder();
+        StringBuilder s = new StringBuilder();
         for (int i = 0; i < tree.length; i++)
-            v.append("level").append(i).append(":\n").append(tree[i]).append("\n");
+            s.append("level").append(i).append(":\n").append(tree[i]).append("\n");
 
-        return v.toString();
+        return s.toString();
     }
 
     /**
@@ -77,11 +74,11 @@ class Dendrogram implements Serializable {
      * @return una stringa che rappresenta il dendrogramma
      */
     public String toString(Data data) {
-        StringBuilder v = new StringBuilder();
+        StringBuilder s = new StringBuilder();
         for (int i = 0; i < tree.length; i++)
-            v.append("level").append(i).append(":\n").append(tree[i].toString(data)).append("\n");
+            s.append("level").append(i).append(":\n").append(tree[i].toString(data)).append("\n");
 
-        return v.toString();
+        return s.toString();
     }
 
 }

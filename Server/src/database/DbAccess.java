@@ -6,8 +6,6 @@ import java.sql.SQLException;
 
 /**
  * Gestisce l'accesso al Database.
- *
- * @author Nazz
  */
 public class DbAccess {
     /** Nome del driver. */
@@ -40,7 +38,7 @@ public class DbAccess {
             throw new DatabaseConnectionException(e.toString());
         }
         String connectionString = DBMS + "://" + SERVER + ":" + PORT + "/" + DATABASE
-                + "?user=" + USER_ID + "&password=" + PASSWORD + "&serverTimezone=UTC"; //&useSSL=false&allowPublicKeyRetrieval=true
+                + "?user=" + USER_ID + "&password=" + PASSWORD + "&serverTimezone=UTC";
 
         try {
             conn = DriverManager.getConnection(connectionString);

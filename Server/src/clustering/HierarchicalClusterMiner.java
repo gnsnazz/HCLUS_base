@@ -3,7 +3,6 @@ package clustering;
 import data.Data;
 import data.InvalidSizeException;
 import distance.ClusterDistance;
-
 import java.io.*;
 import java.nio.file.FileAlreadyExistsException;
 import java.util.regex.Matcher;
@@ -11,15 +10,12 @@ import java.util.regex.Pattern;
 
 /**
  * Modella il processo di clustering.
- *
- * @author Nazz
  */
 public class HierarchicalClusterMiner implements Serializable {
-	/** Dendrogramma */
+	/** Dendrogramma. */
 	private final Dendrogram dendrogram;
-	/** Percorso della directory di salvataggio e caricamento degli oggetti serializzati */
+	/** Percorso della directory di salvataggio e caricamento degli oggetti serializzati. */
 	private static final String DIRECTORY_PATH = "./saved/";
-
 
 	/**
 	 * Crea un'istanza di classe HierarchicalClusterMiner con profondità depth.
@@ -88,11 +84,11 @@ public class HierarchicalClusterMiner implements Serializable {
 	/**
 	 * Restituisce una rappresentazione testuale del dendrogramma.
 	 *
-	 * @param  data dataset di esempi
-	 *
-	 * @throws InvalidDepthException se la profondità del dendrogramma è minore del numero di esempi
+	 * @param data  dataset di esempi
 	 *
 	 * @return una stringa che rappresenta il dendrogramma
+	 *
+	 * @throws InvalidDepthException se la profondità del dendrogramma è minore del numero di esempi
 	 */
 	public String toString(Data data) throws InvalidDepthException {
 		return dendrogram.toString(data);
@@ -101,7 +97,7 @@ public class HierarchicalClusterMiner implements Serializable {
 	/**
 	 * Carica un'istanza di HierarchicalClusterMiner da un file.
 	 *
-	 * @param  fileName nome del file da cui caricare l'istanza
+	 * @param fileName  nome del file da cui caricare l'istanza
 	 *
 	 * @return l'istanza caricata di HierarchicalClusterMiner
 	 *
@@ -132,7 +128,7 @@ public class HierarchicalClusterMiner implements Serializable {
 	/**
 	 * Salva l'istanza corrente di HierarchicalClusterMiner su un file.
 	 *
-	 * @param  fileName nome del file su cui salvare l'istanza
+	 * @param fileName  nome del file su cui salvare l'istanza
 	 *
 	 * @throws FileNotFoundException se il file non viene trovato
 	 * @throws IOException se si verifica un errore di input/output

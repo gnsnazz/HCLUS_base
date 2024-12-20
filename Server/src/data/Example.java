@@ -6,12 +6,10 @@ import java.util.List;
 
 /**
  * Modella le entità esempio inteso come vettore di valori reali.
- *
- * @author Nazz
  */
 public class Example implements Iterable<Double> {
-    /** Vettore di valori reali */
-    private final List<Double> example;    //vettore di valori reali
+    /** Vettore di valori reali. */
+    private final List<Double> example;
 
     /**
      * Crea un'istanza di classe Example.
@@ -21,16 +19,16 @@ public class Example implements Iterable<Double> {
     }
 
     /**
-     * Restituisce un iterator per scorrere gli elementi di {@link #example}.
+     * Restituisce un iterator per scorrere gli elementi di example.
      *
-     * @return example.iterator() iterator per scorrere gli elementi di {@link #example}
+     * @return un iterator per scorrere gli elementi di example
      */
     public Iterator<Double> iterator(){
         return example.iterator();
     }
 
     /**
-     * Modifica {@link #example} inserendo v in coda.
+     * Inserisce v in coda di example.
      *
      * @param v  valore da inserire
      */
@@ -39,7 +37,7 @@ public class Example implements Iterable<Double> {
     }
 
     /**
-     * Calcola la distanza euclidea tra l'istanza this.example e l'istanza newE.example.
+     * Calcola la distanza euclidea tra l'istanza corrente(this.example) e una nuova istanza(newE.example).
      *
      * @param newE  istanza di Example con cui calcolare la distanza
      *
@@ -66,7 +64,7 @@ public class Example implements Iterable<Double> {
     /**
      * Restituisce una stringa che rappresenta il contenuto di example.
      *
-     * @return s stringa contenente i valori di example
+     * @return una stringa contenente i valori di example
      */
     public String toString() {
         StringBuilder s = new StringBuilder();

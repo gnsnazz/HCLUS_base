@@ -7,8 +7,6 @@ import data.InvalidSizeException;
 
 /**
  * Calcola la media della distanza tra due cluster.
- *
- * @author Nazz
  */
 public class AverageLinkDistance implements ClusterDistance {
     /**

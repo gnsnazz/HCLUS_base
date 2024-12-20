@@ -1,7 +1,6 @@
 package data;
 
 import database.*;
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -9,15 +8,13 @@ import java.util.List;
 
 /**
  * Modella un insieme di esempi.
- *
- * @author Nazz
  */
 public class Data {
-    /** Lista di esempi */
-    private final List<Example> data = new ArrayList<>();   //rappresenta il dataset
+    /** Lista di esempi che rappresenta il dataset. */
+    private final List<Example> data = new ArrayList<>();
 
     /**
-     * Crea un'istanza di classe Data leggendo i suoi esempi dalla tabella con nome tableName nel database.
+     * Crea un'istanza di classe Data leggendo gli esempi dalla tabella con nome tableName nel database.
      *
      * @param tableName  nome della tabella nel database
      *
@@ -28,9 +25,7 @@ public class Data {
         try {
             TableData tableData = new TableData(dbAccess);
             List<Example> examples = tableData.getDistinctTransazioni(tableName);
-
             this.data.addAll(examples);
-
         } catch (DatabaseConnectionException e) {
             throw new NoDataException("Errore di connessione al database: " + e.getMessage() + "\n");
         } catch (EmptySetException e) {
@@ -43,7 +38,7 @@ public class Data {
     }
 
     /**
-     * Restituisce il numero degli esempi memorizzati in {@link #data}.
+     * Restituisce il numero degli esempi memorizzati in data.
      *
      * @return numero di esempi nel dataset
      */
@@ -52,7 +47,7 @@ public class Data {
     }
 
     /**
-     * Restituisce l'elemento dell'istanza data in posizione exampleIndex.
+     * Restituisce l'elemento dell'istanza data in una posizione specifica.
      *
      * @param exampleIndex  indice dell'elemento da restituire
      *
@@ -65,16 +60,16 @@ public class Data {
     /**
      * Restituisce un iterator per scorrere gli elementi di {@link #data}.
      *
-     * @return iterator per scorrere gli elementi di {@link #data}
+     * @return iterator per scorrere gli elementi di data
      */
     public Iterator<Example> iterator() {
         return data.iterator();
     }
 
     /**
-     * Crea una stringa in cui memorizza gli esempi memorizzati in {@link #data}.
+     * Crea una stringa in cui memorizza gli esempi memorizzati in data.
      *
-     * @return stringa con gli esempi in {@link #data}
+     * @return stringa con gli esempi in data
      */
     public String toString() {
         StringBuilder s = new StringBuilder();

@@ -6,13 +6,11 @@ import java.net.Socket;
 
 /**
  * Gestisce la connessione al server.
- *
- * @author Nazz
  */
 public class MultiServer {
-    /** Porta server */
+    /** Porta server. */
     private final int PORT;
-    /** Singleton */
+    /** Singleton. */
     private static MultiServer singleton = null;
 
     /**
@@ -47,7 +45,6 @@ public class MultiServer {
                 while (true) {
                     Socket socket = ss.accept();
                     System.out.println("Connessione client: " + socket);
-
                     try {
                         new ServerOneClient(socket);
                     } catch (IOException e) {

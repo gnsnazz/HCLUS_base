@@ -6,8 +6,6 @@ import data.InvalidSizeException;
 
 /**
  * Interfaccia per il calcolo della distanza tra due cluster.
- *
- * @author Nazz
  */
 public interface ClusterDistance {
 	/**

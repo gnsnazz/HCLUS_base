@@ -6,8 +6,11 @@ package clustering;
 public class InvalidDepthException extends Exception {
     /**
      * Costruttore parametrizzato.
+     *
+     * @param msg  messaggio da visualizzare
      */
     InvalidDepthException(String msg) {
         super(msg);
     }
+
 }

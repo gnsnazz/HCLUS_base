@@ -7,8 +7,6 @@ import java.net.Socket;
 /**
  * Gestisce il menu per la scelta dell'operazione da eseguire e si occupa
  * di inviare le richieste al server e di ricevere le risposte.
- *
- * @author Nazz
  */
 public class MainTest {
     /**
@@ -21,7 +19,8 @@ public class MainTest {
     private ObjectInputStream in;
 
     /**
-     * Costruttore.
+     * Costruttore che inizializza la connessione.
+     *
      * @param ip  indirizzo ip del server
      * @param port  porta del server
      *

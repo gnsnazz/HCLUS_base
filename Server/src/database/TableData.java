@@ -1,7 +1,6 @@
 package database;
 
 import data.Example;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +12,7 @@ import java.util.List;
  * Gestisce l'accesso ai dati di una tabella.
  */
 public class TableData {
-    /** Connessione al database */
+    /** Connessione al database. */
     private final DbAccess db;
 
     /**
@@ -48,7 +47,7 @@ public class TableData {
         String query = "SELECT DISTINCT * FROM " + table;
         rs = stmt.executeQuery(query);
 
-        if (!rs.isBeforeFirst()) { // verifica se il ResultSet è vuoto
+        if (!rs.isBeforeFirst()) {  // verifica se il ResultSet è vuoto
             throw new EmptySetException("La tabella " + table + " è vuota.\n");
         }
 

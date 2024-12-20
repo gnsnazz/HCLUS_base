@@ -7,8 +7,6 @@ import data.InvalidSizeException;
 
 /**
  * Calcola la distanza tra due cluster.
- *
- * @author Nazz
  */
 public class SingleLinkDistance implements ClusterDistance {
 	/**

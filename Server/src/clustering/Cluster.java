@@ -1,7 +1,6 @@
 package clustering;
 
 import data.Data;
-
 import java.io.Serializable;
 import java.util.Iterator;
 import java.util.TreeSet;
@@ -11,8 +10,6 @@ import java.util.Set;
  * Modella un cluster come la collezione delle posizioni occupate
  * dagli esempi raggruppati nel Cluster nel vettore data dell’oggetto
  * che modella il dataset su cui il clustering è calcolato(istanza di Data).
- *
- * @author Nazz
  */
 public class Cluster implements Iterable<Integer>, Cloneable, Serializable {
 	/**
@@ -41,7 +38,7 @@ public class Cluster implements Iterable<Integer>, Cloneable, Serializable {
 	/**
 	 * Restituisce un iterator per scorrere gli elementi del cluster.
 	 *
-	 * @return clusteredData.iterator() iterator per scorrere gli elementi del cluster
+	 * @return un iterator per scorrere gli elementi del cluster
 	 */
 	public Iterator<Integer> iterator() {
 		return clusteredData.iterator();

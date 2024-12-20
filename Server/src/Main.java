@@ -4,9 +4,8 @@ import server.MultiServer;
  * Classe main del Server.
  */
 public class Main {
-
     /**
-     * Punto di partenza dell'applicazione lato server.
+     * Punto di partenza dell'applicazione server.
      *
      * @param args  argomenti passati da terminale
      */

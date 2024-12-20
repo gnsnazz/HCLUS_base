@@ -14,20 +14,26 @@ import java.util.StringTokenizer;
  */
 public class Keyboard {
 	// ************* Error Handling Section **************************
+	/**
+	 * printErrors is a boolean indicating whether input errors are currently printed to standard output.
+	 */
 	private static boolean printErrors = true;
+	/**
+	 * errorCount is the current error count.
+	 */
 	private static int errorCount = 0;
 
 	/**
 	 * Returns the current error count.
-	 * @return the current error count.
+	 *
+	 * @return the current error count
 	 **/
 	public static int getErrorCount() {
 		return errorCount;
 	}
 
 	/**
-	 * resetErrorCount method
-	 * resets the current error count to zero.
+	 * Resets the current error count to zero.
 	 */
 	// -----------------------------------------------------------------
 	// Resets the current error count to zero.
@@ -39,7 +45,8 @@ public class Keyboard {
 	/**
 	 * Returns a boolean indicating whether input errors are
 	 * currently printed to standard output.
-	 * @return a boolean indicating whether input errors are currently printed to standard output.
+	 *
+	 * @return a boolean indicating whether input errors are currently printed to standard output
 	**/
 	public static boolean getPrintErrors() {
 		return printErrors;
@@ -48,7 +55,8 @@ public class Keyboard {
 	/**
 	 * setPrintErrors method
 	 * sets a boolean indicating whether input errors are to be printed to standard output.
-	 * @param flag a boolean indicating whether input errors are to be printed to standard output.
+	 *
+	 * @param flag  a boolean indicating whether input errors are to be printed to standard output
 	 */
 	public static void setPrintErrors(boolean flag) {
 		printErrors = flag;
