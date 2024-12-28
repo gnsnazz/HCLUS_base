@@ -13,16 +13,16 @@ import java.util.List;
  */
 public class TableSchema {
 	/** Connessione al database. */
-	private final DbAccess db;
+	private DbAccess db;
 
 	/**
 	 * Classe interna che rappresenta un attributo della tabella.
 	 */
 	public static class Column {
 		/** Nome dell'attributo. */
-		private final String name;
+		private String name;
 		/** Tipo dell'attributo. */
-		private final String type;
+		private String type;
 		/**
 		 * Costruttore.
 		 *
@@ -55,14 +55,14 @@ public class TableSchema {
 		 * @return rappresentazione testuale dell'attributo
 		 */
 		public String toString(){
-			return name+":"+type;
+			return name + ":" + type;
 		}
 	}
 
 	/**
 	 * Lista degli attributi della tabella.
 	 */
-	List<Column> tableSchema= new ArrayList<>();
+	private List<Column> tableSchema = new ArrayList<>();
 
 	/**
 	 * Costruttore.
@@ -87,16 +87,14 @@ public class TableSchema {
 		mapSQL_JAVATypes.put("FLOAT","number");
 		mapSQL_JAVATypes.put("DOUBLE","number");
 
-		Connection con=db.getConnection();
+		Connection con = db.getConnection();
 		DatabaseMetaData meta = con.getMetaData();
 	    ResultSet res = meta.getColumns(null, null, tableName, null);
 
 	    while (res.next()) {
 	        if(mapSQL_JAVATypes.containsKey(res.getString("TYPE_NAME")))
-	       		 tableSchema.add(new Column(
-                                 res.getString("COLUMN_NAME"),
-                                 mapSQL_JAVATypes.get(res.getString("TYPE_NAME")))
-	       				 );
+	       		 tableSchema.add(new Column(res.getString("COLUMN_NAME"),
+						 mapSQL_JAVATypes.get(res.getString("TYPE_NAME"))));
 	    }
 	    res.close();
 	}
@@ -107,8 +105,8 @@ public class TableSchema {
 	 * @return numero di attributi
 	 */
 	public int getNumberOfAttributes(){
-			return tableSchema.size();
-		}
+		return tableSchema.size();
+	}
 
 	/**
 	 * Restituisce l'attributo in posizione index
@@ -118,7 +116,7 @@ public class TableSchema {
 	 * @return attributo in posizione index
 	 */
 	public Column getColumn(int index){
-			return tableSchema.get(index);
-		}
+		return tableSchema.get(index);
+	}
 
 }

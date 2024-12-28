@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class Data {
     /** Lista di esempi che rappresenta il dataset. */
-    private final List<Example> data = new ArrayList<>();
+    private List<Example> data = new ArrayList<>();
 
     /**
      * Crea un'istanza di classe Data leggendo gli esempi dalla tabella con nome tableName nel database.

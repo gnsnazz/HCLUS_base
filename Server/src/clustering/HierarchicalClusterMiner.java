@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  */
 public class HierarchicalClusterMiner implements Serializable {
 	/** Dendrogramma. */
-	private final Dendrogram dendrogram;
+	private Dendrogram dendrogram;
 	/** Percorso della directory di salvataggio e caricamento degli oggetti serializzati. */
 	private static final String DIRECTORY_PATH = "./saved/";
 
@@ -70,28 +70,6 @@ public class HierarchicalClusterMiner implements Serializable {
             }
         }
 
-	}
-
-	/**
-	 * Restituisce una rappresentazione testuale del dendrogramma.
-	 *
-	 * @return una stringa che rappresenta il dendrogramma
-	 */
-	public String toString() {
-		return dendrogram.toString();
-	}
-
-	/**
-	 * Restituisce una rappresentazione testuale del dendrogramma.
-	 *
-	 * @param data  dataset di esempi
-	 *
-	 * @return una stringa che rappresenta il dendrogramma
-	 *
-	 * @throws InvalidDepthException se la profondità del dendrogramma è minore del numero di esempi
-	 */
-	public String toString(Data data) throws InvalidDepthException {
-		return dendrogram.toString(data);
 	}
 
 	/**
@@ -175,6 +153,28 @@ public class HierarchicalClusterMiner implements Serializable {
 		try (ObjectOutputStream outStream = new ObjectOutputStream(new FileOutputStream(file))) {
 			outStream.writeObject(this);
         }
+	}
+
+	/**
+	 * Restituisce una rappresentazione testuale del dendrogramma.
+	 *
+	 * @return una stringa che rappresenta il dendrogramma
+	 */
+	public String toString() {
+		return dendrogram.toString();
+	}
+
+	/**
+	 * Restituisce una rappresentazione testuale del dendrogramma.
+	 *
+	 * @param data  dataset di esempi
+	 *
+	 * @return una stringa che rappresenta il dendrogramma
+	 *
+	 * @throws InvalidDepthException se la profondità del dendrogramma è minore del numero di esempi
+	 */
+	public String toString(Data data) throws InvalidDepthException {
+		return dendrogram.toString(data);
 	}
 
 }

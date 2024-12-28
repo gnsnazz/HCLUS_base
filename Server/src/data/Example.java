@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class Example implements Iterable<Double> {
     /** Vettore di valori reali. */
-    private final List<Double> example;
+    private List<Double> example;
 
     /**
      * Crea un'istanza di classe Example.
