@@ -9,7 +9,6 @@ set port=8080
 set clientProjectPath=%~dp0Client
 set jarFile=%clientProjectPath%\client.jar
 
-echo Esecuzione del file JAR con l'indirizzo %address% e la porta %port%
 java -jar "%jarFile%" %address% %port%
 
 if errorlevel 1 (

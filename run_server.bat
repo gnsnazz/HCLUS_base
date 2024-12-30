@@ -17,7 +17,6 @@ for %%i in ("%dependencies%\*.jar") do (
 
 cd /d %serverProjectPath%
 
-echo Esecuzione del file JAR con la porta %port%
 java -cp "!classpath!" %mainClass% %port%
 
 if errorlevel 1 (
