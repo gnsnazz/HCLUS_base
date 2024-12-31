@@ -27,7 +27,8 @@ class Dendrogram implements Serializable {
     /**
      * Memorizza un ClusterSet in una posizione specifica del dendrogramma.
      *
-     * @param level  livello del dendrogramma in cui inserire il cluster set
+     * @param c  clusterSet da memorizzare
+     * @param level  livello del dendrogramma in cui inserire il clusterSet
      */
     void setClusterSet(ClusterSet c, int level) {
         tree[level] = c;
