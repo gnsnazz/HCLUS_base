@@ -66,6 +66,12 @@ public class Keyboard {
 	// Increments the error count and prints the error message if
 	// appropriate.
 	// -----------------------------------------------------------------
+	/**
+	 * error method
+	 * Increments the error count and prints the error message if appropriate.
+	 *
+	 * @param str  the error message
+	 */
 	private static void error(String str) {
 		errorCount++;
 		if (printErrors)
@@ -73,17 +79,30 @@ public class Keyboard {
 	}
 
 	// ************* Tokenized Input Stream Section ******************
+	/**
+	 * The current input token.
+	 */
 	private static String current_token = null;
 
+	/**
+	 * The StringTokenizer object used for parsing the input stream.
+	 */
 	private static StringTokenizer reader;
 
-	private static final BufferedReader in = new BufferedReader(
-			new InputStreamReader(System.in));
+	/**
+	 * The BufferedReader object used for reading from the input stream.
+	 */
+	private static final BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
 	// -----------------------------------------------------------------
 	// Gets the next input token assuming it may be on subsequent
 	// input lines.
 	// -----------------------------------------------------------------
+	/**
+	 * Gets the next input token assuming it may be on subsequent input lines.
+	 *
+	 * @return the next input token assuming it may be on subsequent input lines
+	 */
 	private static String getNextToken() {
 		return getNextToken(true);
 	}
@@ -91,6 +110,13 @@ public class Keyboard {
 	// -----------------------------------------------------------------
 	// Gets the next input token, which may already have been read.
 	// -----------------------------------------------------------------
+	/**
+	 * Gets the next input token, which may already have been read.
+	 *
+	 * @param skip  a boolean indicating whether subsequent lines are used
+	 *
+	 * @return the next input token, which may already have been read
+	 */
 	private static String getNextToken(boolean skip) {
 		String token;
 
@@ -109,6 +135,14 @@ public class Keyboard {
 	// current input line or a subsequent one. The parameter
 	// determines if subsequent lines are used.
 	// -----------------------------------------------------------------
+
+	/**
+	 * Gets the next token from the input, which may come from the current input line
+	 * or a subsequent one. The parameter determines if subsequent lines are used.
+	 *
+	 * @param skip a boolean indicating whether subsequent lines are used
+	 * @return the next token from the input, which may come from the current input line
+	 */
 	private static String getNextInputToken(boolean skip) {
 		final String delimiters = " \t\n\r\f";
 		String token = null;
@@ -137,8 +171,9 @@ public class Keyboard {
 	// current input line.
 	// -----------------------------------------------------------------
 	/**
-	 * endOfLine method
-	 * @return true if there are no more tokens to read on the current input line.
+	 * endOfLine method.
+	 *
+	 * @return true if there are no more tokens to read on the current input line
 	 */
 	public static boolean endOfLine() {
 		return !reader.hasMoreTokens();
@@ -147,8 +182,9 @@ public class Keyboard {
 	// ************* Reading Section *********************************
 
 	/**
-	 * readString method
-	 * @return a string read from standard input.
+	 * readString method.
+	 *
+	 * @return a string read from standard input
 	 */
 	public static String readString() {
 		String str;
@@ -166,8 +202,9 @@ public class Keyboard {
 	}
 
 	/**
-	 * readWord method
-	 * @return a space-delimited substring (a word) read from standard input.
+	 * readWord method.
+	 *
+	 * @return a space-delimited substring (a word) read from standard input
 	 */
 	public static String readWord() {
 		String token;
@@ -181,8 +218,9 @@ public class Keyboard {
 	}
 
 	/**
-	 * readBoolean method
-	 * @return a boolean read from standard input.
+	 * readBoolean method.
+	 *
+	 * @return a boolean read from standard input
 	 */
 	 public static boolean readBoolean() {
 		String token = getNextToken();
@@ -204,8 +242,9 @@ public class Keyboard {
 	}
 
 	/**
-	 * readChar method
-	 * @return a char read from standard input.
+	 * readChar method.
+	 *
+	 * @return a char read from standard input
 	 */
 	public static char readChar() {
 		String token = getNextToken(false);
@@ -225,8 +264,9 @@ public class Keyboard {
 	}
 
 	/**
-	 * readInt method
-	 * @return an int read from standard input.
+	 * readInt method.
+	 *
+	 * @return an int read from standard input
 	 */
 	public static int readInt() {
 		String token = getNextToken();
@@ -241,8 +281,9 @@ public class Keyboard {
 	}
 
 	/**
-	 * readLong method
-	 * @return a long read from standard input.
+	 * readLong method.
+	 *
+	 * @return a long read from standard input
 	 */
 	public static long readLong() {
 		String token = getNextToken();
@@ -257,8 +298,9 @@ public class Keyboard {
 	}
 
 	/**
-	 * readShort method
-	 * @return a short read from standard input.
+	 * readShort method.
+	 *
+	 * @return a short read from standard input
 	 */
 	public static float readFloat() {
 		String token = getNextToken();
@@ -274,8 +316,9 @@ public class Keyboard {
 	}
 
 	/**
-	 * readDouble method
-	 * @return a double read from standard input.
+	 * readDouble method.
+	 *
+	 * @return a double read from standard input
 	 */
 	public static double readDouble() {
 		String token = getNextToken();
@@ -289,4 +332,5 @@ public class Keyboard {
 		}
 		return value;
 	}
+
 }
