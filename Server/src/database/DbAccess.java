@@ -13,15 +13,15 @@ public class DbAccess {
     /** Nome del DBMS da utilizzare */
     private final String DBMS = "jdbc:mysql";
     /** Indirizzo del server. */
-    private final String SERVER = "localhost";
+    private String SERVER = "localhost";
     /** Nome del database. */
-    private final String DATABASE = "MapDB";
+    private String DATABASE = "MapDB";
     /** Porta del server. */
     private final int PORT = 3306;
     /** Nome utente per l'accesso al database. */
-    private final String USER_ID = "MapUser";
+    private String USER_ID = "MapUser";
     /** Password per l'accesso al database. */
-    private final String PASSWORD = "map";
+    private String PASSWORD = "map";
     /** Connessione al database. */
     private Connection conn;
 

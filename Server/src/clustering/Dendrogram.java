@@ -8,7 +8,7 @@ import java.io.Serializable;
  */
 class Dendrogram implements Serializable {
     /** Array di ClusterSet che modella il dendrogramma. */
-    private final ClusterSet[] tree;
+    private ClusterSet[] tree;
 
     /**
      * Crea un vettore di dimensione depth con cui inizializza tree.

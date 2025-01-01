@@ -10,7 +10,7 @@ import java.io.Serializable;
  */
 class ClusterSet implements Serializable {
 	/** Insieme di cluster. */
-	private final Cluster[] C;
+	private Cluster[] C;
 	/** Indice dell'ultimo cluster. */
 	private int lastClusterIndex = 0;
 
