@@ -128,7 +128,7 @@ public class HierarchicalClusterMiner implements Serializable {
 		}
 
 		if (!fileName.matches(validRegex)) {
-			throw new IOException("Estensione non valida. Il nome del file deve terminare con una estensione: .bin, .dat, .txt, .csv, .xml, .json, .ser");
+			throw new IOException("Formato non valido. Il nome del file deve terminare con una estensione: .bin, .dat, .txt, .csv, .xml, .json, .ser");
 		}
 
 		fileName = fileName.replace("\\", File.separator).replace("/", File.separator);
